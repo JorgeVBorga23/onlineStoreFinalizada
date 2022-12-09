@@ -13,7 +13,7 @@
                     @endforeach
                 </ul>
             @endif
-            <form method="POST" action="{{ route('admin.product.store') }}">
+            <form enctype="multipart/form-data" method="POST" action="{{ route('admin.product.store') }}">
                 @csrf
                 <div class="row">
                     <div class="col">
@@ -76,7 +76,7 @@
                             <td>
                                 <a class="btn btn-primary"
                                     href="{{ route('admin.product.edit', ['id' => $product->getId()]) }}">
-                                <i class="bi-pencil"></i>
+                                    <i class="bi-pencil"></i>
                             <td>
                                 <form action="{{ route('admin.product.delete', $product->getId()) }}" method="POST">
                                     @csrf
